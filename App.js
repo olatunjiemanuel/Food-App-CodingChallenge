@@ -3,8 +3,8 @@ import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 
 //component imports
 import SearchBar from "./components/SearchBar";
-import GreyButton from "./components/GreyButton";
-import GreenButton from "./components/GreenButton";
+import Buttons from "./components/Buttons";
+import PageDivider from "./components/PageDivider.js";
 
 export default function App() {
   return (
@@ -15,16 +15,11 @@ export default function App() {
       <View>
         <Text style={styles.text}>Category</Text>
       </View>
-      <View style={styles.buttoncontainer}>
-        <View>
-          <GreenButton text="All" />
-        </View>
-        <View>
-          <GreyButton text="Food" />
-        </View>
-        <View>
-          <GreyButton text="Drink" />
-        </View>
+      <View>
+        <Buttons />
+      </View>
+      <View>
+        <PageDivider />
       </View>
     </SafeAreaView>
   );
@@ -44,8 +39,5 @@ const styles = StyleSheet.create({
     lineHeight: 27,
     color: "#3E5481",
     marginHorizontal: 24,
-  },
-  buttoncontainer: {
-    flexDirection: "row",
   },
 });
