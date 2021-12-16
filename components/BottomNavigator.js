@@ -10,25 +10,49 @@ import ProfileIcon from "../assets/SVG icons/ProfileIcon";
 const BottomNavigator = () => {
   return (
     <View style={styles.container}>
-      <View>
+      <View style={{ alignItems: "center", marginLeft: 27 }}>
         <HomeIcon color="#9FA5C0" />
-        <Text style={{ color: "#9FA5C0" }}>Home</Text>
+        <Text style={styles.text}>Home</Text>
       </View>
-      <View>
+      <View style={{ alignItems: "center", marginLeft: 46 }}>
         <UploadIcon color="#9FA5C0" />
-        <Text style={{ color: "#9FA5C0" }}>Upload</Text>
+        <Text style={styles.text}>Upload</Text>
       </View>
-      <View>
-        <ScanIcon color="black" />
-        <Text style={{ color: "#9FA5C0" }}>Scan</Text>
+      <View
+        style={{
+          position: "absolute",
+          alignItems: "center",
+          height: 116,
+          flexDirection: "column",
+          marginBottom: 60,
+          marginLeft: 160,
+        }}
+      >
+        <View
+          style={{
+            width: 56,
+            height: 56,
+            borderRadius: 28,
+            backgroundColor: "#1FCC79",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <ScanIcon color="#fff" />
+        </View>
+        <View>
+          <Text style={{ color: "#9FA5C0", marginTop: 5, textAlign: "center" }}>
+            Scan
+          </Text>
+        </View>
       </View>
-      <View>
+      <View style={{ alignItems: "center", marginLeft: 100 }}>
         <NotificationIcon color="#9FA5C0" />
-        <Text>Notifcation</Text>
+        <Text style={styles.text}>Notifcation</Text>
       </View>
-      <View>
+      <View style={{ alignItems: "center", marginLeft: 30 }}>
         <ProfileIcon color="#9FA5C0" />
-        <Text>Profile</Text>
+        <Text style={styles.text}>Profile</Text>
       </View>
     </View>
   );
@@ -36,9 +60,17 @@ const BottomNavigator = () => {
 
 const styles = StyleSheet.create({
   container: {
+    alignItems: "center",
     flexDirection: "row",
     width: 375,
     height: 95,
+  },
+  text: {
+    fontSize: 12,
+    fontWeight: "500",
+    lineHeight: 14.52,
+    textAlign: "center",
+    color: "#9FA5C0",
   },
 });
 

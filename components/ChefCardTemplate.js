@@ -48,7 +48,7 @@ const ChefCardTemplate = (props) => {
         }}
       >
         <Text style={{ color: "#9FA5C0" }}>Food</Text>
-        <Entypo name="dot-single" size={5} color="#9FA5C0" />
+        <Entypo name="dot-single" size={10} color="#9FA5C0" />
         <Text style={{ color: "#9FA5C0" }}> {">"} 60 mins </Text>
       </View>
     </View>
