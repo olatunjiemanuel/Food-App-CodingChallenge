@@ -2,14 +2,14 @@ import React from "react";
 import { StyleSheet, TextInput, View } from "react-native";
 
 //icon imports
-import { AntDesign } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
 
 const SeacrhBar = (props) => {
   const { placeholder } = props;
   return (
     <View style={styles.container}>
       <View style={styles.container2}>
-        <AntDesign name="search1" size={18} color="#3E5481" />
+        <Feather name="search" size={18} color="#3E5481" />
         <TextInput style={styles.TextInput} placeholder={placeholder} />
       </View>
     </View>

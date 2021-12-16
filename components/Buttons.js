@@ -27,7 +27,11 @@ const Buttons = () => {
     <View style={styles.Buttoncontainer}>
       <TouchableOpacity
         onPress={onPressHandler3}
-        style={[styles.container, click1 ? styles.containerHighlight : null]}
+        style={[
+          styles.container,
+          click1 ? styles.containerHighlight : null,
+          { marginLeft: 24, width: 68, height: 48 },
+        ]}
       >
         <Text style={[styles.text, click1 ? styles.textHighlight : null]}>
           All
@@ -36,7 +40,11 @@ const Buttons = () => {
 
       <TouchableOpacity
         onPress={OnPressHandler1}
-        style={[styles.container, click2 ? styles.containerHighlight : null]}
+        style={[
+          styles.container,
+          click2 ? styles.containerHighlight : null,
+          { marginLeft: 16 },
+        ]}
       >
         <Text style={[styles.text, click2 ? styles.textHighlight : null]}>
           Food
@@ -44,7 +52,11 @@ const Buttons = () => {
       </TouchableOpacity>
       <TouchableOpacity
         onPress={OnPressHandler2}
-        style={[styles.container, click3 ? styles.containerHighlight : null]}
+        style={[
+          styles.container,
+          click3 ? styles.containerHighlight : null,
+          { marginLeft: 16 },
+        ]}
       >
         <Text style={[styles.text, click3 ? styles.textHighlight : null]}>
           Drink
