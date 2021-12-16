@@ -14,6 +14,7 @@ import Buttons from "./components/Buttons";
 import PageDivider from "./components/PageDivider.js";
 import PageNavigator from "./components/PageNavigator";
 import ChefCardTemplate from "./components/ChefCardTemplate";
+import BottomNavigator from "./components/BottomNavigator";
 
 export default function App() {
   return (
@@ -33,7 +34,7 @@ export default function App() {
       <View style={{ marginTop: 24 }}>
         <PageNavigator />
       </View>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View
           style={{ flexDirection: "row", marginTop: 24, marginHorizontal: 24 }}
         >
@@ -75,6 +76,9 @@ export default function App() {
           </View>
         </View>
       </ScrollView>
+      <View>
+        <BottomNavigator />
+      </View>
     </SafeAreaView>
   );
 }
