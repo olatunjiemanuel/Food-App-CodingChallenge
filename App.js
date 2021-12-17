@@ -25,9 +25,12 @@ import Ratings from "./components/Ratings";
 import Line from "./components/Line";
 import MealDescription from "./components/MealDescription";
 import Ingredients from "./components/Ingredients";
+import CategoryData from "./assets/data/CategoryData";
 
 // expo imports
 import { Entypo } from "@expo/vector-icons";
+
+import { colors } from "./assets/colors/colors";
 
 export default function App() {
   const [modalOpen, setmodalOpen] = useState(false);
@@ -55,12 +58,12 @@ export default function App() {
           <View style={styles.modalMealContainer}>
             <View style={{ marginHorizontal: 24 }}>
               <View style={{ marginTop: 16, marginLeft: 144 }}>
-                <ModalPageDivider color="#D0DBEA" />
+                <ModalPageDivider color={colors.cream} />
               </View>
               <View style={{ marginTop: 23 }}>
                 <Text
                   style={{
-                    color: "#3E5481",
+                    color: colors.textDark,
                     fontSize: 17,
                     fontWeight: "700",
                     lineHeight: 27,
@@ -80,7 +83,7 @@ export default function App() {
               >
                 <Text
                   style={{
-                    color: "#9FA5C0",
+                    color: colors.gray,
                     fontSize: 15,
                     fontWeight: "500",
                     lineHeight: 25,
@@ -88,10 +91,10 @@ export default function App() {
                 >
                   Food
                 </Text>
-                <Entypo name="dot-single" size={20} color="#9FA5C0" />
+                <Entypo name="dot-single" size={20} color={colors.gray} />
                 <Text
                   style={{
-                    color: "#9FA5C0",
+                    color: colors.gray,
                     fontSize: 15,
                     fontWeight: "500",
                     lineHeight: 25,
@@ -133,8 +136,10 @@ export default function App() {
       <View style={{ marginTop: 24 }}>
         <Text style={styles.text}>Category</Text>
       </View>
-      <View style={{ marginTop: 16 }}>
-        <Buttons />
+      <View style={{ marginTop: 16, flexDirection: "row" }}>
+        {CategoryData.map((item, index) => (
+          <Buttons id={item.id} title={item.text} isActive={index[0]} />
+        ))}
       </View>
       <View style={{ marginTop: 23 }}>
         <PageDivider />
@@ -203,7 +208,7 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     fontSize: 20,
     lineHeight: 27,
-    color: "#3E5481",
+    color: colors.textDark,
     marginHorizontal: 24,
   },
   modalContainer: {
