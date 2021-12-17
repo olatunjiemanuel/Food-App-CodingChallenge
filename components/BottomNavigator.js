@@ -1,5 +1,5 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, Text, Pressable, View } from "react-native";
 
 import HomeIcon from "../assets/SVG icons/HomeIcon";
 import UploadIcon from "../assets/SVG icons/UploadIcon";
@@ -8,16 +8,51 @@ import NotificationIcon from "../assets/SVG icons/NotificationIcon";
 import ProfileIcon from "../assets/SVG icons/ProfileIcon";
 
 const BottomNavigator = () => {
+  const [homebuttonpress, sethomebuttonpress] = useState(true);
+  const [uploadbuttonpress, setuploadbuttonpress] = useState(false);
+  const [notificationbuttonpress, setnotificationbuttonpress] = useState(false);
+  const [profilebuttonpress, setprofilebuttonpress] = useState(false);
+
   return (
     <View style={styles.container}>
-      <View style={{ alignItems: "center", marginLeft: 27 }}>
-        <HomeIcon color="#9FA5C0" />
-        <Text style={styles.text}>Home</Text>
-      </View>
-      <View style={{ alignItems: "center", marginLeft: 46 }}>
-        <UploadIcon color="#9FA5C0" />
-        <Text style={styles.text}>Upload</Text>
-      </View>
+      <Pressable
+        onPress={() => {
+          sethomebuttonpress(true);
+          setuploadbuttonpress(false);
+          setnotificationbuttonpress(false);
+          setprofilebuttonpress(false);
+        }}
+        style={{ alignItems: "center", marginLeft: 27 }}
+      >
+        <HomeIcon color={homebuttonpress ? "#1FCC79" : "#9FA5C0"} />
+        <Text
+          style={[
+            styles.text,
+            { color: homebuttonpress ? "#1FCC79" : "#9FA5C0" },
+          ]}
+        >
+          Home
+        </Text>
+      </Pressable>
+      <Pressable
+        onPress={() => {
+          setuploadbuttonpress(true);
+          sethomebuttonpress(false);
+          setnotificationbuttonpress(false);
+          setprofilebuttonpress(false);
+        }}
+        style={{ alignItems: "center", marginLeft: 46 }}
+      >
+        <UploadIcon color={uploadbuttonpress ? "#1FCC79" : "#9FA5C0"} />
+        <Text
+          style={[
+            styles.text,
+            { color: uploadbuttonpress ? "#1FCC79" : "#9FA5C0" },
+          ]}
+        >
+          Upload
+        </Text>
+      </Pressable>
       <View
         style={{
           position: "absolute",
@@ -40,20 +75,50 @@ const BottomNavigator = () => {
         >
           <ScanIcon color="#fff" />
         </View>
-        <View>
-          <Text style={{ color: "#9FA5C0", marginTop: 5, textAlign: "center" }}>
-            Scan
-          </Text>
+        <View style={{ marginTop: 8 }}>
+          <Text style={styles.text}>Scan</Text>
         </View>
       </View>
-      <View style={{ alignItems: "center", marginLeft: 100 }}>
-        <NotificationIcon color="#9FA5C0" />
-        <Text style={styles.text}>Notifcation</Text>
-      </View>
-      <View style={{ alignItems: "center", marginLeft: 30 }}>
-        <ProfileIcon color="#9FA5C0" />
-        <Text style={styles.text}>Profile</Text>
-      </View>
+      <Pressable
+        onPress={() => {
+          setnotificationbuttonpress(true);
+          setuploadbuttonpress(false);
+          sethomebuttonpress(false);
+          setprofilebuttonpress(false);
+        }}
+        style={{ alignItems: "center", marginLeft: 100 }}
+      >
+        <NotificationIcon
+          color={notificationbuttonpress ? "#1FCC79" : "#9FA5C0"}
+        />
+        <Text
+          style={[
+            styles.text,
+            { color: notificationbuttonpress ? "#1FCC79" : "#9FA5C0" },
+          ]}
+        >
+          Notifcation
+        </Text>
+      </Pressable>
+      <Pressable
+        onPress={() => {
+          setprofilebuttonpress(true);
+          setnotificationbuttonpress(false);
+          setuploadbuttonpress(false);
+          sethomebuttonpress(false);
+        }}
+        style={{ alignItems: "center", marginLeft: 30 }}
+      >
+        <ProfileIcon color={profilebuttonpress ? "#1FCC79" : "#9FA5C0"} />
+        <Text
+          style={[
+            styles.text,
+            { color: profilebuttonpress ? "#1FCC79" : "#9FA5C0" },
+          ]}
+        >
+          Profile
+        </Text>
+      </Pressable>
     </View>
   );
 };

@@ -148,8 +148,8 @@ export default function App() {
         >
           <View>
             <ChefCardTemplate
-              profilePic={require("./assets/Images/ElifSonas.png")}
-              mealImage={require("./assets/Images/Salad.png")}
+              profilePic={require("./assets/Images/CalemLewis.png")}
+              mealImage={require("./assets/Images/Pancake.png")}
               mealName="Pancake"
               ChefName="Calem Lewis"
             />
