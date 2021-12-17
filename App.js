@@ -34,10 +34,16 @@ import { colors } from "./assets/colors/colors";
 
 export default function App() {
   const [modalOpen, setmodalOpen] = useState(false);
+  const [selected, setSelected] = useState("0");
 
   const onPressHandler = () => {
     setmodalOpen(true);
   };
+
+  // const onPress = (selected) => {
+  //   setSelected(selected);
+  //   console.log(selected)
+  // };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -137,9 +143,7 @@ export default function App() {
         <Text style={styles.text}>Category</Text>
       </View>
       <View style={{ marginTop: 16, flexDirection: "row" }}>
-        {CategoryData.map((item, index) => (
-          <Buttons id={item.id} title={item.text} isActive={index[0]} />
-        ))}
+        <Buttons />
       </View>
       <View style={{ marginTop: 23 }}>
         <PageDivider />
@@ -201,6 +205,14 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     flexDirection: "column",
+  },
+  container2: {
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#F4F5F7",
+    width: 86,
+    height: 47,
+    borderRadius: 32,
   },
   text: {
     width: 82,
